@@ -1,0 +1,397 @@
+*{
+    box-sizing: inherit;
+    /* kế thừa */
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.grid{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+@keyframes show{
+    from{
+        transform: scale(0);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.header{
+    z-index: 1;
+    height: 100px;
+    position: relative;
+    background-color: #1d2027;
+}
+
+.header-item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 6px;
+}
+
+.header__navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.header__logo{
+    width: 200px;
+}
+
+.header__logo-link{
+    padding: 20px 12px;
+    margin-left: -12px;
+    display: inline-block;
+    transform: translateY(4px);
+}
+
+.header__logo-img{
+    width: 180px;
+    object-fit: contain;
+    position: relative;
+    top: -9px;
+    margin-left: 3px;
+}
+
+.header__list{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+}
+
+.header__link{
+    text-decoration: none;
+    line-height: 80px;
+    font-size: 17px;
+    padding: 0 28px;
+    color: #fff;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+.header__link--active{
+    color: rgb(241, 58, 58);   
+}
+
+.header__link:hover{
+    color: rgb(241, 58, 58);
+}
+
+.header__container{
+    display: flex;
+    align-items: center;
+}
+
+.header__product{
+   padding: 6px;
+   position: relative;
+}
+
+.header__product-icon{
+    color: #fff;
+    font-size: 15px;
+    padding: 0 4px 0 12px;
+}
+
+.header__product-number{
+     color: #fff;
+     font-size: 15px;
+}
+
+.header__product:hover{
+    cursor: pointer;
+}
+
+.header__product-cart:hover .header__product--no-cart{
+    display: block;
+}
+
+.header__product--no-cart{
+    position: absolute;
+    background-color: #fff;
+    right: 0;
+    top: 35px;
+    width: 250px;
+    border-radius: 2px;
+    display: none;
+    transform-origin: 90% top;
+    animation: show 0.1s ease;
+    cursor: default;
+    box-shadow: 0 1px 3px #f3eeee;
+    z-index: 1;
+}
+
+.header__product--no-cart::after{
+    display: block;
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 100px;
+    height: 20px;
+    
+}
+
+.header__product--no-cart-heading{
+    font-size: 18px;
+    color: #2f2121;
+    margin: 20px 25px 16px;
+    font-weight: 300;
+}
+
+.header__product--no-cart-des{
+    font-size: 14px;
+    margin: 10px 0 35px 25px;
+    color: #634c4c;
+}
+
+/* move */
+.move{
+    display: block;
+    height: 65px;
+    line-height: 65px;
+    font-size: 15px;
+    color: #777;
+}
+
+.move__link{
+    color: #777;
+    text-decoration: none;
+    margin-right: 4px;
+}
+
+.move__link:hover{
+    color: #d53247;   
+}
+
+.move__present{
+    color: #d53247; 
+    margin-left: 4px;   
+}
+
+/* content__slider */
+.content__slider{
+    background-image: url(https://ld-wp73.template-help.com/wordpress/prod_23279/v3/wp-content/uploads/2019/04/home-7.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: calc(108900% / 1920);
+    position: relative;
+}
+
+.content__slider-des{
+    position: absolute;
+    bottom: 325px;
+    right: 0;
+    left: 0;
+    text-align: center;
+}
+
+.content__slider-heading{
+    color: #fff;
+    font-size: 60px;
+    font-weight: 300;
+    letter-spacing: 10px;
+}
+
+/* content__intro */
+.content__intro{
+    text-align: center;
+    text-align: center;
+    padding: 70px 0 25px;
+}
+
+.content__intro-heading{
+    font-size: 30px;
+    color: #222;
+    font-weight: 300;
+    margin: 18px 0;
+}
+
+.content__intro-des{
+    font-size: 15px;
+    color: #777;
+    line-height: 21px;
+    font-weight: 300;
+}
+
+/* content__pic */
+.content__pic{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -6px;
+    margin-right: -6px;
+    margin-bottom: 80px;
+}
+
+.content__pic-item{
+    width: 25%;
+    overflow: hidden;
+    height: 242px; 
+    padding: 0 6px;
+    margin: 3px 0;   
+}
+
+.content-img{
+    width: 100%;
+}
+
+.content__pic-item:hover .content__pic-back{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.content__pic-back{
+    position: relative;
+    background-color: rgba(255,0,0,0.3);
+    height: 241px;
+    width: 100%;
+    top: -244px;
+    display: none;
+    animation: advertise linear 0.2s;
+}
+
+@keyframes advertise{
+    from{
+        opacity: 0;
+    } to{
+        opacity: 1;
+    }
+}
+
+/* footer */
+.footer__top{
+    background-color: #222;
+    padding: 80px 0 100px;
+}
+
+.footer__intro{
+    display: flex;
+}
+
+.footer__about{
+    width: 50%;
+    padding-right: 30px;
+    color: #fff;
+}
+
+.footer__about-heading{
+    font-size: 32px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.footer__about-des{
+    font-size: 17px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.footer__contact{
+    width: 50%;
+    padding-left: 30px;
+    color: #fff;
+}
+
+.footer__contact-heading{
+    font-size: 32px;
+    font-weight: 400;
+    margin: 20px 0;    
+}
+
+.footer__contact-list{
+    list-style: none;
+    padding-left: 8px;
+    margin: 0;
+}
+
+.footer__contact-item,
+.footer__contact-item__link{
+    color: #bdbdbd;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer__contact-item{
+    padding: 8px 0;
+}
+
+.footer__contact-item__link:hover{
+    color: #d53247;
+}
+
+.footer__contact-item-icon{
+    color: #fff !important;
+    margin-right: 6px;
+}
+
+.footer__bottom{
+    background-color: #000;
+}
+
+.footer__end{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.footer__end-left{
+    color: #fff;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.footer__apps-list{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+}
+
+.footer__social{
+    text-decoration: none;
+    margin: 0 3px;
+    background-color: #000;
+    display: inline-block;
+}
+
+.footer__social-icon{
+    color: rgb(94, 85, 85);    
+    font-size: 24px;
+    padding-top: 4px;
+    transition: all linear 0.2s;
+}
+
+.footer__social-icon:hover{
+    color: rgb(171, 168, 168);
+}
+
+.footer__img{
+    position: fixed;
+    right: 10px;
+    bottom: 70px;
+    z-index: 2;
+}
+
+.footer__chat{
+    width: 52px;
+    position: fixed;
+    bottom: 18px;
+    right: 6px;
+    z-index: 2;
+}
